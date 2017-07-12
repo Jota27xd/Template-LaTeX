@@ -1,0 +1,296 @@
+%----------------------------------------------------------------------
+%	Template de Informes v2.0
+%	Autor: José Guillermo Ponce Ramírez, a partir de Templates
+%	varios, y mucho Google.
+%----------------------------------------------------------------------
+
+%----------------------------------------------------------------------
+%	Configuración del documento
+%----------------------------------------------------------------------
+\documentclass[12pt, letterpaper]{article} 
+% report: Estilo Informe completo, con capítulos.
+% article: Estilo Informe básico, sin Capítulos.
+
+\usepackage[utf8x]{inputenc}
+\usepackage[activeacute,spanish,es-tabla]{babel}
+\usepackage[left=2cm, right=2cm, bottom=3cm, top=3cm, headheight=40pt]{geometry}
+\usepackage{graphicx} % Required for including pictures
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images
+\usepackage[nottoc, notlot, notlof]{tocbibind} % Índices, sin ToC, LoF ni LoT
+\renewcommand{\refname}{Bibliografía} % Nombre para Bibliografía (clase article)
+%\renewcommand{\bibname}{Bibliografía} % Nombre para Bibliografía (clase book/report)
+\renewcommand\tocbibname{Bibliografía}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{siunitx} % Unidades del SI
+\sisetup{output-decimal-marker = {,}}
+\usepackage{cancel} % Permite cancelar (tachar) elementos
+\usepackage{tabu} % Tablas chéveres
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables for horizontal lines
+\usepackage{multirow} % Celdas en más de una fila
+\usepackage{easybmat} % Matrices por Bloques
+\usepackage{lipsum} % Lorem Ipsum
+
+\title{Template Informes 2.0} % Nombre archivo en Overleaf
+\newcommand{\titulo}{Título del informe}
+\newcommand{\ramo}{XXNNNN Ramo}
+\newcommand{\departamento}{Departamento de Ingeniería XXXXX}
+
+\usepackage{color}
+\definecolor{gray51}{rgb}{0.51,0.51,0.51}
+\definecolor{gray71}{rgb}{0.71,0.71,0.71}
+\newcommand{\HRule}{\rule{\linewidth}{.4mm}}
+
+\usepackage{listings} % Incluye códigos
+\renewcommand{\lstlistingname}{Algoritmo}
+\renewcommand{\lstlistlistingname}{Índice de \lstlistingname s}
+\lstset{ 
+	basicstyle=\ttfamily\small,
+    commentstyle=\color{red},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{gray71},
+    stringstyle=\color{green},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    xleftmargin=2em,
+    frame=single,
+    framexleftmargin=1.5em
+}
+
+\usepackage{hyperref} 		% Hipervínculos
+\hypersetup{
+	colorlinks	= true,		% Vínculos coloreados en vez de recuadros
+    urlcolor	= blue,		% Color para vínculos externos
+    linkcolor	= black,	% Color para vínculos internos
+    citecolor	= red		% Color para citas
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{\footnotesize Universidad de Chile - Facultad de Ciencias Físicas y Matemáticas\\
+\departamento\\
+\ramo\ - Semestre Otoño 2017}
+\fancyhead[R]{\includegraphics[scale=0.2]{fcfm.png}}
+\fancyfoot[L]{\small \rm \textit{\titulo}}
+\fancyfoot[C]{}
+\fancyfoot[R]{\small \rm \textbf{\thepage}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+%\linespread{1.2} 				% Interlineado
+%\setlength\parindent{0pt} 		% Longitud sangría
+
+\begin{document}
+%----------------------------------------------------------------------
+%	Portada
+%----------------------------------------------------------------------
+\newgeometry{left=2.5cm,right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\begin{titlepage}
+{
+\begin{wrapfigure}{l}{1cm}
+\vspace{-0.7cm}
+\includegraphics[width=5cm]{fcfm.png}
+\end{wrapfigure}
+
+\textsc{\color{red}\hspace{3.2cm}\departamento}\\
+\textsc{\color{gray51}\hspace{3.8cm}Facultad de Ciencias Físicas y Matemáticas}\\
+\textsc{\color{gray51}\hspace{3.8cm}Universidad de Chile}\\
+\textsc{\color{gray51}\hspace{3.8cm}\ramo}\\
+}
+
+\begin{center}
+~\\[5cm]
+{\color{gray71}\textsc{HiperTítulo}}
+\HRule~ \\[0.4cm]
+{ \Huge \textup \bfseries  \titulo}\\[0.4cm]
+{ \Large \textup{Generación, parámetros de operación y estimación de instalación según demanda}}\\[0.2cm]
+\HRule 
+~\\[3.5cm]
+\end{center}
+
+\begin{minipage}{.5\textwidth}
+~
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+\begin{flushright}
+\begin{tabular}{l}
+\textbf{\textit{Profesores:}} \\
+{\small Claudia Rahmann Z.}\\
+{\small Luis Vargas D.}\\[0.3cm]
+\textbf{\textit{Auxiliar:}} \\
+{\small Nicolás Mira G.}\\[0.3cm]
+%\textbf{\textit{Ayudantes de}} \\
+%\textbf{\textit{Laboratorio:}} \\
+\textbf{\textit{Integrantes:}}\\
+{\small Ignacio Ñancupil Q.}\\
+{\small José Ponce R.}\\
+{\small Javier Rojas J.}\\[.3cm]
+\textbf{\textit{Fecha:}}\\
+{\small DD de MMMM de AAAA}
+\end{tabular}
+\end{flushright}
+\end{minipage}
+\begin{minipage}{.05\textwidth}
+~
+\end{minipage}
+\end{titlepage}
+
+\restoregeometry
+%----------------------------------------------------------------------
+%	Documento
+%----------------------------------------------------------------------
+
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\tableofcontents 
+\newpage
+\listoffigures
+\listoftables
+\lstlistoflistings
+
+%\addcontentsline{toc}{chapter}{Nombre Sección} % Para forzar aparición en el Índice
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\newpage
+\section{Introducción}
+
+\begin{wrapfigure}[9]{L}{0.43\textwidth}
+\vspace{-7mm}
+\begin{equation*}
+\mathcal{C} = \left[ \begin{BMAT}(c)[4pt]{cc:cc:cc:c}{cc:cc:cc:c}
+%(c: columnas del mismo ancho)[ancho columnas]{patrón columnas}{patrón filas}
+1 & -1& 0 & & & & 0 \\
+-1&  1& 0 & 0 & 0 & & \\
+0 & 0 & \bullet & \bullet & 0 & & \\
+  & 0 & \bullet & \bullet & 0 & 0 & 0\\
+  &   & 0 & 0 & \bullet & \bullet & 0 \\
+  &   &   & 0 & \bullet & \bullet & 0 \\
+0 &   &   & 0 & 0 & 0 & \smash{\ddots}
+\end{BMAT} \right]
+\end{equation*}
+\end{wrapfigure}
+
+\lipsum[2-4] %[párrafo inicial - párrafo final] Lorem Ipsum, máx 150.
+
+\newpage
+\section{Marco Teórico}
+
+\begin{equation}
+\left[
+  \begin{BMAT}[5pt]{c|c}{c}
+    \begin{BMAT}[5pt]{c:c:c}{ccccccc}
+      & & \\
+      & & \\
+      & & \\
+      v_1 & \dots & v_m \\
+      & & \\
+      & & \\
+      & &
+    \end{BMAT}
+  &
+    \begin{BMAT}{c}{c|c}
+      \begin{BMAT}[5pt]{c:c:c}{ccc}
+        & & \\
+        w_1(a) & \dots & w_n(a) \\
+        & &
+      \end{BMAT}
+    \\
+      \begin{BMAT}[10pt]{c}{c}
+        B(z)
+      \end{BMAT}
+    \end{BMAT}
+  \end{BMAT} 
+\right]
+\end{equation}
+
+Matriz por bloques, con el comando BMAT
+
+\lstinputlisting[language=Verilog, caption=Ejemplo lenguaje Verilog]{counter_verilog.v}
+
+\newpage
+\section{Resultados}
+
+\subsection{Actividad 1: Curva Característica del Panel}
+En esta primera actividad se busca obtener la curva que indica las características del panel utilizado. Los datos de placa del panel se muestran en la figurassss
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width = 0.5\textwidth]{placa.jpg}
+%\caption{Datos de Placa del Panel utilizado}
+%\label{v1}
+%\end{figure}
+Se ubica el panel de forma perpendicular al sol y se proceden a medir las corrientes de corto circuito, $I_{sc}$, tensión de circuito abierto, $V_{oc}$ y medidas de tensión y corriente para distintas cargas. Los resultados obtenidos se representan en el gráfico de la figura . \cite{explorador}
+
+
+
+
+\subsubsection{Tensión e intensidad de Operación}
+
+\begin{table}[H]
+\centering
+\begin{tabu} to \textwidth {l X[c] X[c] X[c]}
+\toprule
+\textbf{Mes} & \textbf{Energía [MWh]} & \textbf{Ingresos Mensuales [US\$]} & \textbf{Ingresos Acumulados [US\$]}\\\midrule
+Enero        & 0,510 & 40,81 & 40,81  \\
+Febrero      & 0,452 & 36,16 & 76,98  \\
+Marzo        & 0,364 & 29,12 & 106,10 \\
+Abril        & 0,377 & 30,16 & 136,26 \\
+Mayo         & 0,476 & 38,10 & 174,36 \\
+Junio        & 0,592 & 47,42 & 221,78 \\
+Julio        & 0,545 & 43,61 & 265,39 \\
+Agosto       & 0,598 & 47,90 & 313,30 \\
+Septiembre   & 0,399 & 31,97 & 345,27 \\
+Octubre      & 0,415 & 33,25 & 378,53 \\
+Noviembre    & 0,460 & 36,87 & 415,40 \\
+Diciembre    & 0,540 & 43,27 & 458,68 \\
+\bottomrule
+\end{tabu}
+\caption{Estimación de ingresos mensual estimado a partir de la simulación.}
+\label{tabla2}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabu} to \textwidth {l X[c] X[c] X[c] X[c]}
+\toprule
+\multirow{2}{*}{\textbf{Carga Conectada}} & \multicolumn{2}{c}{Panel acostado} & \multicolumn{2}{c}{Panel apuntando al Este}\\\cmidrule{2-5}
+& \textbf{Voltaje [V]} & \textbf{Corriente [A]} & \textbf{Voltaje [V]} & \textbf{Corriente [A]} \\\midrule
+Circuito abierto 		& 38,7 	& 0 	& 38,3 	& 0 \\
+1 par de ampolletas 	& 17,4 	& 1,5 	& 8		& 1 \\
+2 pares de ampolletas 	& 3 	& 1,5 	& 1,4	& 1,03 \\
+Cortocircuito 			& 0 	& 1,4 	& 0		& 1,9 \\
+\bottomrule
+\end{tabu}
+\caption{Resultados obtenidos para la Actividad 2}
+\label{resultadosact2}
+\end{table}
+
+\newpage
+\begin{thebibliography}{99}
+\bibitem{explorador} Departamento de Geofísica y Ministerio de Energía, \textit{Explorador Eólico} [online]. Disponible en \url{http://walker.dgf.uchile.cl/Explorador/Eolico2/}.
+
+\bibitem{apunte} L. Vargas, J. Haas, F. Barría y L. Reyes, ``Energía Eólica'' en \textit{Generación de Energía Eléctrica con Fuentes Renovables} [online]. Primavera 2010, pp. 97-133. Disponible en \url{https://www.u-cursos.cl/ingenieria/2017/1/EL6000/1/material_docente/bajar?id_material=1683799}.
+
+\bibitem{Bergey} Ficha Técnica Aerogenerador Bergey XL. 1 [online], Bergey Windpower. Disponible en \url{http://beta.energiainnovadora.com/wp-content/uploads/2017/01/Bergey-BWC-XL-1KW.pdf}.
+
+\bibitem{simuladorConsumo} \textit{Simulador de consumo} [online]. Enel Distribución. Disponible en \url{https://www.eneldistribucion.cl/simulador-consumo}.
+
+\bibitem{SAM} \textit{System Advisor Model (SAM)} [online]. Natoinal Renewable Energy Laboratory (NREL). Disponible en: \url{https://sam.nrel.gov/}
+
+\bibitem{parametros} J. Mur Amada, ``Selección de Emplazamientos'' en \textit{Curso de Energía Eólica} [online], Departamento de Ingeniería Eléctrica de la Universidad de Zaragoza, pp. 32-34. Disponible en \url{http://www.windygrid.org/manualEolico.pdf}.
+
+\end{thebibliography}
+\end{document}
